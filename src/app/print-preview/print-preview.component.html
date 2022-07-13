@@ -1,0 +1,25 @@
+<h2>Output</h2>
+<h6>Educations</h6>
+<ul *ngFor="let education of selectedEducations">
+  <li>
+    <span>{{ education  | json }}</span>
+  </li>
+</ul>
+<h6>Certificates</h6>
+<ul *ngFor="let certificate of selectedCertificates">
+  <li>
+    <span>{{ certificate  | json }}</span>
+  </li>
+</ul>
+<h6>Experiences</h6>
+<ul *ngFor="let experience of selectedExperiences">
+  <li>
+    <span>{{ experience | json }}</span>
+  </li>
+</ul>
+<h6>Projects</h6>
+<ul *ngFor="let project of selectedProjects">
+  <li>
+    <span>{{ project  | json }}</span>
+  </li>
+</ul>

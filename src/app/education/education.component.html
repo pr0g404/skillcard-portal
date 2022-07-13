@@ -1,0 +1,22 @@
+<div class="education-wrapper">
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Bildungseinrichtung</span>
+    </div>
+    <input (ngModelChange)="onChange()" [(ngModel)]="institution"
+           class="form-control"
+           type="text">
+  </div>
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Studiengang / Abschluss</span>
+    </div>
+    <input (ngModelChange)="onChange()" [(ngModel)]="degree"
+           class="form-control"
+           type="text">
+  </div>
+  von <input (ngModelChange)="onChange()" [(ngModel)]="from"
+             type="month">
+  bis <input (ngModelChange)="onChange()" [(ngModel)]="to"
+             type="month">
+</div>

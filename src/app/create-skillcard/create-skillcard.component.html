@@ -1,0 +1,65 @@
+<div class="form-wrapper">
+  <h3>Fachliche Spezialisierung</h3>
+  <div class="form-group">
+    <textarea appTextareaAutoresize
+              class="form-control"></textarea>
+  </div>
+  <h3>Fachliche Kenntnisse</h3>
+  <ng-select [(ngModel)]="selectedSkills"
+             [addTag]="true"
+             [hideSelected]="true"
+             [multiple]="true"
+             placeholder="Suchen oder hinzufügen">
+    <ng-option *ngFor="let skill of skills" [value]="skill.id">{{skill.name}}</ng-option>
+  </ng-select>
+  <h3>Programmiersprachen</h3>
+  <ng-select [(ngModel)]="selectedProgramminglanguages"
+             [addTag]="true"
+             [hideSelected]="true"
+             [multiple]="true"
+             placeholder="Suchen oder hinzufügen">
+    <ng-option *ngFor="let programminglanguage of programminglanguages"
+               [value]="programminglanguage.id">{{programminglanguage.name}}</ng-option>
+  </ng-select>
+  <h3>Software</h3>
+  <ng-select [(ngModel)]="selectedSoftwares"
+             [addTag]="true"
+             [hideSelected]="true"
+             [multiple]="true"
+             placeholder="Suchen oder hinzufügen">
+    <ng-option *ngFor="let software of softwares"
+               [value]="software.id">{{software.name}}</ng-option>
+  </ng-select>
+  <h3>Bildung
+    <button (click)="addEducation()" class="btn btn-success" type="button">hinzufügen
+    </button>
+  </h3>
+  <app-education *ngFor="let education of selectedEducations"
+                 [education]="education"></app-education>
+  <h3>Zertifizierungen & Weiterbildungen
+    <button (click)="addCertificates()" class="btn btn-success" type="button">hinzufügen
+    </button>
+  </h3>
+  <app-certificate *ngFor="let certificate of selectedCertificates"
+                   [certificate]="certificate"></app-certificate>
+  <h3>Berufserfahrung
+    <button (click)="addExperience()" class="btn btn-success" type="button">hinzufügen
+    </button>
+  </h3>
+  <app-experience *ngFor="let experience of selectedExperiences"
+                  [experience]="experience"></app-experience>
+  <h3>Projekte
+    <button (click)="addProject()" class="btn btn-success">hinzufügen
+    </button>
+  </h3>
+  <app-project *ngFor="let project of selectedProjects" [project]="project"></app-project>
+</div>
+<button class="btn btn-dark">speichern</button>
+<app-print-preview [selectedCertificates]="selectedCertificates"
+                   [selectedEducations]="selectedEducations"
+                   [selectedExperiences]="selectedExperiences"
+                   [selectedProgramminglanguages]="selectedProgramminglanguages"
+                   [selectedProjects]="selectedProjects"
+                   [selectedSkills]="selectedSkills"
+                   [selectedSoftwares]="selectedSoftwares">
+</app-print-preview>

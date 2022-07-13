@@ -1,0 +1,9 @@
+<div class="certificates-wrapper">
+  <div class="input-group mb-3">
+    <span class="input-group-text">Titel</span>
+    <input (ngModelChange)="onChange()" [(ngModel)]="title" class="form-control"
+           type="text">
+  </div>
+  <input (ngModelChange)="onChange()" [(ngModel)]="date"
+         type="month">
+</div>

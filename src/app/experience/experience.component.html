@@ -1,0 +1,24 @@
+<div class="input-group mb-3">
+  <span class="input-group-text">Stellenbezeichnung</span>
+  <input (ngModelChange)="onChange()" [(ngModel)]="title" class="form-control"
+         type="text">
+</div>
+<div class="input-group mb-3">
+  <span class="input-group-text">Unternehmen</span>
+  <input (ngModelChange)="onChange()" [(ngModel)]="company" class="form-control"
+         type="text">
+</div>
+von <input (ngModelChange)="onChange()" [(ngModel)]="from"
+           type="month">
+bis <input (ngModelChange)="onChange()" [(ngModel)]="to"
+           type="month">
+<h5>Tätigkeiten</h5>
+<div class="input-group mb-3">
+  <input class="form-control" placeholder="Aufgaben" [(ngModel)]="inputValue" type="text">
+  <button (click)="addToActivities()" class="btn btn-success" type="button">hinzufügen</button>
+</div>
+<div class="list-wrapper">
+  <ol>
+    <li *ngFor="let value of addedTasks">{{ value }}</li>
+  </ol>
+</div>

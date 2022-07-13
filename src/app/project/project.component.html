@@ -1,0 +1,37 @@
+<div class="project-wrapper">
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Kundenname</span>
+    </div>
+    <input type="text"
+           class="form-control"
+           (ngModelChange)="onChange()"
+           [(ngModel)]="customer"
+           aria-label="Small"
+           aria-describedby="inputGroup-sizing-sm">
+  </div>
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Projekt-Titel</span>
+    </div>
+    <input type="text"
+           (ngModelChange)="onChange()"
+           [(ngModel)]="projectTitle"
+           class="form-control"
+           aria-label="Small"
+           aria-describedby="inputGroup-sizing-sm">
+  </div>
+  von <input (ngModelChange)="onChange()" [(ngModel)]="from"
+             type="month">
+  bis <input (ngModelChange)="onChange()" [(ngModel)]="to"
+             type="month">
+  <div class="input-group mb-3">
+    <input class="form-control" placeholder="Aufgaben" [(ngModel)]="inputValue" type="text">
+    <button (click)="addToActivities()" class="btn btn-success" type="button">hinzufügen</button>
+  </div>
+  <div class="list-wrapper">
+    <ol>
+      <li *ngFor="let value of addedTasks">{{ value }}</li>
+    </ol>
+  </div>
+</div>

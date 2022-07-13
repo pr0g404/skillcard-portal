@@ -1,0 +1,8 @@
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "~paper-css/paper.css";
+
+body {
+  background: white;
+}
+
+/* You can add global styles to this file, and also import other style files */
